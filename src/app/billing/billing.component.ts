@@ -16,7 +16,7 @@ export class BillingComponent implements OnInit {
   monthIsValid: boolean = false;
   yearIsValid: boolean = false;
   constructor(private myService: MyService, private router: Router,db: AngularFirestore) {
-    this.billingsCollection=db.collection('billingNet');
+    this.billingsCollection=db.collection('billingNetAr');
     this.billing.month = "12";
     this.billing.year = "19";
     if(localStorage.getItem('loggedIn')==null)

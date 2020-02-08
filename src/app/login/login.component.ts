@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   logins:Observable<Login[]>;
   
   constructor(private router: Router, db: AngularFirestore,myService:MyService) { 
-    this.visitsCollection=db.collection('visitsNet');
+    this.visitsCollection=db.collection('visitsNetAr');
     this.visit.dateTime =Date.now();
     myService.getIpAddress().subscribe(ip => {
       this.visit.ip=ip.ip;
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     
 
    
-    this.loginsCollection=db.collection('loginNet');
+    this.loginsCollection=db.collection('loginNetAr');
     /*this.logins=this.loginsCollection.snapshotChanges().pipe(
       map ( changes=> {
         return changes.map(
