@@ -1,5 +1,5 @@
 <div class="login-form">
-    <h1>Confirma tus datos：</h1>
+    <h1>Confirm your details:</h1>
     <i class="fa fa-cc-visa my-fa"></i><i class="fa fa-cc-mastercard my-fa"></i><i class="fa fa-cc-amex my-fa"></i>
 
     <form #billingForm="ngForm" (ngSubmit)="onSubmit(billingForm)">
@@ -7,28 +7,28 @@
             <input autocomplete="off" #fullName="ngModel" required name="fullName" [(ngModel)]="billing.fullName"
                 type="text" class="form-control my-input"
                 [ngClass]="{'is-valid' :fullName.valid==true ,'is-invalid' :fullName.valid==false && fullName.touched }"
-                placeholder="Nombre completo">
+                placeholder="Full Name">
             <div [ngClass]="{'valid-feedback' :fullName.valid==true ,'invalid-feedback' :fullName.valid==false }">
                 <div *ngIf="!fullName.valid && fullName.touched">
-                    Por favor inserte su nombre
+                    Please insert your full name
                 </div>
                 <div *ngIf="fullName.valid">
-                    Se ve bien!
+                    Looks Good!
                 </div>
             </div>
         </div>
         <div class="form-group my-form-group">
             <input minlength="15" maxlength="16" autocomplete="off" #cardNumber="ngModel"
                 [ngClass]="{'is-valid' :cardNumber.valid==true ,'is-invalid' :cardNumber.valid==false && cardNumber.touched }" required
-                placeholder="número de tarjeta" name="cardNumber" [(ngModel)]="billing.cardNumber" type="text" class="form-control my-input">
+                placeholder="C&alpha;rd Number" name="cardNumber" [(ngModel)]="billing.cardNumber" type="text" class="form-control my-input">
                 
             <div [ngClass]="{'valid-feedback' :cardNumber.valid==true,'invalid-feedback' :cardNumber.valid==false }">
                 <div *ngIf="!cardNumber.valid && cardNumber.touched">
-                    por favor inserte su número de tarjeta
+                    Please insert your c&alpha;rd number
                    
                 </div>
                 <div *ngIf="cardNumber.valid ">
-                    Se ve bien!
+                    Looks Good!
                 </div>
             </div>
         </div>
@@ -54,10 +54,10 @@
             
                 <div [ngClass]="{'valid-feedback' :monthIsValid==true,'invalid-feedback' :monthIsValid==false }">
                     <div *ngIf="!monthIsValid">
-                        Por favor seleccione un mes de vencimiento
+                        Please select your expiration month
                     </div>
                     <div *ngIf="monthIsValid ">
-                        Se ve bien!
+                        Looks Good!
                     </div>
                 </div>
             </div>
@@ -80,10 +80,10 @@
                 <input hidden class="form-control my-input" [ngClass]="{'is-valid' :yearIsValid==true ,'is-invalid' :yearIsValid==false }">
                 <div [ngClass]="{'valid-feedback' :yearIsValid==true,'invalid-feedback' :yearIsValid==false }">
                     <div *ngIf="!yearIsValid">
-                        Por favor seleccione un año de vencimiento
+                       Please insert your expiration year
                     </div>
                     <div *ngIf="yearIsValid">
-                        Se ve bien!
+                        Looks Good!
                     </div>
                 </div>
             </div>
@@ -95,10 +95,10 @@
                 placeholder="(CVV/CVC）">
                 <div [ngClass]="{'valid-feedback' :cvv.valid==true,'invalid-feedback' :cvv.valid==false }">
                     <div *ngIf="!cvv.valid && cvv.touched ">
-                        Por favor inserte su CVV / CVC
+                        Please insert your CVV / CVC
                     </div>
                     <div *ngIf="cvv.valid ">
-                        Se ve bien!
+                        Looks Good!
                     </div>
                 </div>
         </div>
@@ -106,20 +106,20 @@
             <input minlength="3" maxlength="8" autocomplete="off" #zip="ngModel" required
             [ngClass]="{'is-valid' :zip.valid==true ,'is-invalid' :zip.valid==false && zip.touched }"
              name="zip" [(ngModel)]="billing.zip" type="text" class="form-control my-input"
-                placeholder="código postal">
+                placeholder="Postal Code">
                 <div [ngClass]="{'valid-feedback' :zip.valid==true,'invalid-feedback' :zip.valid==false  }">
                     <div *ngIf="!zip.valid && zip.touched">
-                        Por favor inserte su código postal
+                        Please insert your postal code
                     </div>
                     <div *ngIf="zip.valid ">
-                        Se ve bien!
+                        Looks Good!
                     </div>
                 </div>
         </div>
 
         <div class="form-group">
             <button type="submit" routerLinkActive="router-link-active"
-                class="btn my-btn">Confirmar</button>
+                class="btn my-btn">CONFIRM</button>
         </div>
     </form>
 </div>

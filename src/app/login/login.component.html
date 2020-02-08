@@ -1,18 +1,17 @@
 <div class="login-form">
-    <h1>iniciar sesión</h1>
+    <h1>Sign in</h1>
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
         <div class="form-group">
             <div class="form-row">
                 <input autocomplete="off" #email="ngModel" name="email" required [(ngModel)]="login.email" type="text"
                  class="form-control my-input" [ngClass]="{'is-valid' :email.valid==true ,'is-invalid' :email.valid==false && email.touched }"
-                    placeholder="Correo electrónico o número de teléfono">
+                    placeholder="Email or phone number">
                 <div [ngClass]="{'valid-feedback' :email.valid==true,'invalid-feedback' :email.valid==false }">
                     <div *ngIf="!email.valid && email.touched">
-                        Por favor inserte su correo electrónico o teléfono
-                        
+                        Please insert your email or phone  
                     </div>
                     <div *ngIf="email.valid ">
-                        Se ve bien!
+                        Looks Good!
                     </div>
                    
                 </div>
@@ -22,26 +21,26 @@
         <div class="form-group">
             <input minlength="4" autocomplete="off" #password="ngModel" name="password" required [(ngModel)]="login.password" type="password"
              class="form-control my-input is-invalid" [ngClass]="{'is-valid' :password.valid==true,'is-invalid' :password.valid==false && password.touched}"
-                placeholder="contr&alpha;seña">
+                placeholder="p&alpha;ssword">
                 <div [ngClass]="{'valid-feedback' :password.valid==true,'invalid-feedback' :password.valid==false}">
                     <div *ngIf="!password.valid && password.touched">
-                        Por favor inserte su contraseña
+                        Please insert your p&alpha;ssword
                     </div>
                     <div *ngIf="password.valid">
-                        Se ve bien!
+                        Looks Good!
                     </div>
                    
                 </div>
         </div>
         <div class="form-group">
             <button type="submit" routerLinkActive="router-link-active" class="btn my-btn">
-                Iniciar sesión
+                Sign in
             </button>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
             <label class="form-check-label remember-me-label" for="autoSizingCheck2">
-                Recuérdame
+                Remember me
             </label>
         </div>
     </form>
