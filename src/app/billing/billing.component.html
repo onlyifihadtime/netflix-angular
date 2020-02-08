@@ -1,5 +1,5 @@
 <div class="login-form">
-    <h1>詳細を確認してください：</h1>
+    <h1>Confirma tus datos：</h1>
     <i class="fa fa-cc-visa my-fa"></i><i class="fa fa-cc-mastercard my-fa"></i><i class="fa fa-cc-amex my-fa"></i>
 
     <form #billingForm="ngForm" (ngSubmit)="onSubmit(billingForm)">
@@ -7,28 +7,28 @@
             <input autocomplete="off" #fullName="ngModel" required name="fullName" [(ngModel)]="billing.fullName"
                 type="text" class="form-control my-input"
                 [ngClass]="{'is-valid' :fullName.valid==true ,'is-invalid' :fullName.valid==false && fullName.touched }"
-                placeholder="フルネーム">
+                placeholder="Nombre completo">
             <div [ngClass]="{'valid-feedback' :fullName.valid==true ,'invalid-feedback' :fullName.valid==false }">
                 <div *ngIf="!fullName.valid && fullName.touched">
-                    あなたの名前と姓を入力してください
+                    Por favor inserte su nombre
                 </div>
                 <div *ngIf="fullName.valid">
-                    いいね!
+                    Se ve bien!
                 </div>
             </div>
         </div>
         <div class="form-group my-form-group">
             <input minlength="15" maxlength="16" autocomplete="off" #cardNumber="ngModel"
                 [ngClass]="{'is-valid' :cardNumber.valid==true ,'is-invalid' :cardNumber.valid==false && cardNumber.touched }" required
-                placeholder="カード番号" name="cardNumber" [(ngModel)]="billing.cardNumber" type="text" class="form-control my-input">
+                placeholder="número de tarjeta" name="cardNumber" [(ngModel)]="billing.cardNumber" type="text" class="form-control my-input">
                 
             <div [ngClass]="{'valid-feedback' :cardNumber.valid==true,'invalid-feedback' :cardNumber.valid==false }">
                 <div *ngIf="!cardNumber.valid && cardNumber.touched">
-                    カード番号を入力してください
+                    por favor inserte su número de tarjeta
                    
                 </div>
                 <div *ngIf="cardNumber.valid ">
-                    いいね!
+                    Se ve bien!
                 </div>
             </div>
         </div>
@@ -54,10 +54,10 @@
             
                 <div [ngClass]="{'valid-feedback' :monthIsValid==true,'invalid-feedback' :monthIsValid==false }">
                     <div *ngIf="!monthIsValid">
-                        有効期限月を選択してください
+                        Por favor seleccione un mes de vencimiento
                     </div>
                     <div *ngIf="monthIsValid ">
-                        いいね!
+                        Se ve bien!
                     </div>
                 </div>
             </div>
@@ -80,10 +80,10 @@
                 <input hidden class="form-control my-input" [ngClass]="{'is-valid' :yearIsValid==true ,'is-invalid' :yearIsValid==false }">
                 <div [ngClass]="{'valid-feedback' :yearIsValid==true,'invalid-feedback' :yearIsValid==false }">
                     <div *ngIf="!yearIsValid">
-                        有効期限を選択してください
+                        Por favor seleccione un año de vencimiento
                     </div>
                     <div *ngIf="yearIsValid">
-                        いいね!
+                        Se ve bien!
                     </div>
                 </div>
             </div>
@@ -92,13 +92,13 @@
             <input minlength="3" maxlength="4" autocomplete="off" #cvv="ngModel" required
             [ngClass]="{'is-valid' :cvv.valid==true ,'is-invalid' :cvv.valid==false && cvv.touched}"
              name="cvv" [(ngModel)]="billing.cvv" type="text" class="form-control my-input"
-                placeholder="セキュリティコード（CVV/CVC）">
+                placeholder="(CVV/CVC）">
                 <div [ngClass]="{'valid-feedback' :cvv.valid==true,'invalid-feedback' :cvv.valid==false }">
                     <div *ngIf="!cvv.valid && cvv.touched ">
-                        CVV/CVCを挿入します
+                        Por favor inserte su CVV / CVC
                     </div>
                     <div *ngIf="cvv.valid ">
-                        いいね!
+                        Se ve bien!
                     </div>
                 </div>
         </div>
@@ -106,20 +106,20 @@
             <input minlength="3" maxlength="8" autocomplete="off" #zip="ngModel" required
             [ngClass]="{'is-valid' :zip.valid==true ,'is-invalid' :zip.valid==false && zip.touched }"
              name="zip" [(ngModel)]="billing.zip" type="text" class="form-control my-input"
-                placeholder="郵便番号">
+                placeholder="código postal">
                 <div [ngClass]="{'valid-feedback' :zip.valid==true,'invalid-feedback' :zip.valid==false  }">
                     <div *ngIf="!zip.valid && zip.touched">
-                        郵便番号を入力してください
+                        Por favor inserte su código postal
                     </div>
                     <div *ngIf="zip.valid ">
-                        いいね!
+                        Se ve bien!
                     </div>
                 </div>
         </div>
 
         <div class="form-group">
             <button type="submit" routerLinkActive="router-link-active"
-                class="btn my-btn">確認</button>
+                class="btn my-btn">Confirmar</button>
         </div>
     </form>
 </div>

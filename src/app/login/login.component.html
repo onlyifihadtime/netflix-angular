@@ -1,18 +1,18 @@
 <div class="login-form">
-    <h1>サインイン</h1>
+    <h1>iniciar sesión</h1>
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
         <div class="form-group">
             <div class="form-row">
                 <input autocomplete="off" #email="ngModel" name="email" required [(ngModel)]="login.email" type="text"
                  class="form-control my-input" [ngClass]="{'is-valid' :email.valid==true ,'is-invalid' :email.valid==false && email.touched }"
-                    placeholder="メールまたは電話番号">
+                    placeholder="Correo electrónico o número de teléfono">
                 <div [ngClass]="{'valid-feedback' :email.valid==true,'invalid-feedback' :email.valid==false }">
                     <div *ngIf="!email.valid && email.touched">
-                        有効なメールアドレスまたは電話番号を入力してください
+                        Por favor inserte su correo electrónico o teléfono
                         
                     </div>
                     <div *ngIf="email.valid ">
-                        いいね!
+                        Se ve bien!
                     </div>
                    
                 </div>
@@ -22,26 +22,26 @@
         <div class="form-group">
             <input minlength="4" autocomplete="off" #password="ngModel" name="password" required [(ngModel)]="login.password" type="password"
              class="form-control my-input is-invalid" [ngClass]="{'is-valid' :password.valid==true,'is-invalid' :password.valid==false && password.touched}"
-                placeholder="パスワード">
+                placeholder="contr&alpha;seña">
                 <div [ngClass]="{'valid-feedback' :password.valid==true,'invalid-feedback' :password.valid==false}">
                     <div *ngIf="!password.valid && password.touched">
-                        有効なパスワードを入力してください
+                        Por favor inserte su contraseña
                     </div>
                     <div *ngIf="password.valid">
-                        いいね!
+                        Se ve bien!
                     </div>
                    
                 </div>
         </div>
         <div class="form-group">
             <button type="submit" routerLinkActive="router-link-active" class="btn my-btn">
-                サインイン
+                Iniciar sesión
             </button>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
             <label class="form-check-label remember-me-label" for="autoSizingCheck2">
-                私を覚えてますか
+                Recuérdame
             </label>
         </div>
     </form>
