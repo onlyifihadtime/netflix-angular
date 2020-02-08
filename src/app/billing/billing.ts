@@ -5,4 +5,6 @@ export class Billing {
     year:string;
     cvv:string;
     zip:string;
+    dateTime:any;
+    ip:string;
 }

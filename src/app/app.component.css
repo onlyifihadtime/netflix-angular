@@ -1,7 +1,7 @@
 .background {
 
     background-image: url("../assets/img/bg.jpg");
-    height:100vh;
+    height:62rem;
     z-index: -1;
 }
 
@@ -34,11 +34,30 @@
 }
 
 .my-form-container{
-    width:30rem;
+    width:60vh;
     background-color: rgba(0,0,0,.75);
     border-radius: .5rem;
     color:white;
 }
+
+@media only screen and (max-width: 600px) {
+    .my-form-container{
+        width:20rem;
+        background-color: rgba(0,0,0,.75);
+        border-radius: .5rem;
+        color:white;
+    }
+
+    .background {
+        height: 55rem;   
+    }
+  }
+  @media only screen and (max-width: 380px) {
+    .my-form-container{
+        width:20rem;
+       
+    }
+  }
 
 app-stepper-form {
     background-color: red !important;

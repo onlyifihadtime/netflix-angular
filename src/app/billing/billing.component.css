@@ -52,3 +52,17 @@ input[type=checkbox] {
 :host {
     width:70%;
 }
+
+.my-form-group {
+    position: relative;
+}
+
+
+.input-car {
+    position: absolute;
+    top: 6px;
+    left:6px;
+}
+.input-car:hover {
+    cursor:text;
+}
