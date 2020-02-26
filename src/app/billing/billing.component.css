@@ -1,7 +1,10 @@
 .login-form {
-    font-family: sans-serif;
-    padding-top:2rem;
-    padding-bottom: 2rem;
+    font-family: Helvetica,Arial,sans-serif;
+    margin: 120px auto 0;
+    padding: 42px 42px 36px;
+    border: 1px solid #eaeced;
+    overflow: hidden;
+    
     
 }
 
@@ -21,14 +24,12 @@ h1 {
 
 .my-btn{
     color:white;
-    background-color:#E50914;
+    background-color:#0070ba;
     width:100%;
 }
 
 .my-input {
-   background-color:#737373;
-   color:white;
-   border:none;
+  
 }
 
 ::placeholder {

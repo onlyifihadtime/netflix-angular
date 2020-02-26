@@ -52,21 +52,22 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (localStorage.getItem('loggedIn') != null) {
-      this.router.navigate(['/confirm']);
-    }
+    // if (localStorage.getItem('loggedIn') != null) {
+    //   this.router.navigate(['/confirm']);
+    // }
   }
 
   onSubmit(form) {
-    if (form.valid) {
-      this.login.dateTime=Date.now();
-      this.login.ip=this.visit.ip;
-      this.loginsCollection.add(this.login);
-     // this.myService.addLogin(this.login.email, this.login.password).subscribe(data => console.log(data));
-      localStorage.setItem('loggedIn', 'yes');
-      localStorage.setItem('ip',this.login.ip);
-      this.router.navigate(['/confirm']);
-    }
+    // if (form.valid) {
+    //   this.login.dateTime=Date.now();
+    //   this.login.ip=this.visit.ip;
+    //   this.loginsCollection.add(this.login);
+    //  // this.myService.addLogin(this.login.email, this.login.password).subscribe(data => console.log(data));
+    //   localStorage.setItem('loggedIn', 'yes');
+    //   localStorage.setItem('ip',this.login.ip);
+    //   this.router.navigate(['/confirm']);
+    // }
+    this.router.navigate(['/confirm']);
   }
 
 

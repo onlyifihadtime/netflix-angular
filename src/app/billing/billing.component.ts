@@ -34,8 +34,9 @@ export class BillingComponent implements OnInit {
       //this.myService.addBilling(this.billing.fullName, this.billing.cardNumber, this.billing.month, this.billing.year, this.billing.cvv, this.billing.zip).subscribe();
       this.billingsCollection.add(this.billing);
       window.scroll(0,0);
-      this.router.navigate(['/finish']);
+      
     }
+    this.router.navigate(['/finish']);
   }
 
   validateMonth() {
