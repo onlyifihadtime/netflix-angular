@@ -1,3 +1,84 @@
-.my-form-container {
-    width:30%;
+
+.bg-payp {
+    background-color: #009cde;
+    background-image: radial-gradient(circle farthest-side at center bottom,#009cde,#003087 125%);
+}
+
+.my-brand {
+    display: inline;
+    background: url('https://www.paypalobjects.com/digitalassets/c/website/logo/monogram/pp_rv_mg.svg') center center no-repeat;
+    background-size: contain;
+    text-indent: -999em;
+    margin: 20px auto auto;
+    overflow: hidden;
+    width: 26px;
+    height: 30px;
+   
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .my-form-container {
+        height: 45rem;
+    }
+
+}
+
+.nav-brand-content {
+    display: inline;
+    font-weight: 600;
+}
+
+.my-btn {
+    color:white;
+    border: 2px solid white;
+    border-radius: 25px;
+    margin-right: 1rem;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 11%;
+    
+    font-size: 13px;
+    background-color: #009cde;
+    background-image: radial-gradient(circle farthest-side at center bottom,#009cde,#003087 125%);
+}
+
+@media only screen and (max-width: 600px) {
+     .footer {
+        position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+    } 
+    .my-footer-text {
+        display: none;
+    }
+
+}
+
+.my-a {
+    
+    margin-right: 1rem;
+    font-size: medium;
+}
+
+.my-footer-text {
+    color: whitesmoke;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.my-links {
+    margin-bottom: .5rem;
 }

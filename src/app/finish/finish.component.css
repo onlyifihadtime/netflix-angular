@@ -1,10 +1,18 @@
 .my-span {
-    font-family: sans-serif;
+     font-family: sans-serif;
     font-size: .8rem;
     display: block;
-    margin-top:.8rem
+    margin-top:.8rem 
 }
 
 .my-icon {
     font-size: 40px;
+}
+
+.my-finish {
+    font-family: Helvetica,Arial,sans-serif;
+    margin: 8rem auto 0;
+    padding: 42px 42px 36px;
+    border: 1px solid #eaeced;
+    text-align: center;
 }

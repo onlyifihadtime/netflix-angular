@@ -7,26 +7,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./finish.component.css']
 })
 export class FinishComponent implements OnInit {
-  finished:boolean=false;
+  finished: boolean = false;
 
-  constructor(private router:Router) {
-   }
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
     this.delay(5000);
-    
+
 
   }
 
   async delay(ms: number) {
-    await new Promise(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));  
-    this.finished=true;
+    await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => console.log("fired"));
+    this.finished = true;
     this.delayAndRedirect(3000);
-}
+  }
 
-async delayAndRedirect(ms: number) {
-  await new Promise(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));  
-  window.location.href = 'https://netflix.com';
-}
+  async delayAndRedirect(ms: number) {
+    await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => console.log("fired"));
+    window.location.href = 'https://paypal.com';
+  }
 
 }

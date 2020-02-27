@@ -1,10 +1,24 @@
 .login-form {
     font-family: Helvetica,Arial,sans-serif;
-    margin: 120px auto 0;
+    margin: 8rem auto 0;
     padding: 42px 42px 36px;
     border: 1px solid #eaeced;
     overflow: hidden;
+    width: 35%;
     
+}
+
+@media only screen and (max-width: 600px) {
+    .login-form {
+        font-family: Helvetica,Arial,sans-serif;
+        margin-top:8rem;
+        padding: 42px 42px 36px;
+        border: 1px solid #eaeced;
+        overflow: hidden;
+        width: 100%;
+        
+    }
+
 }
 
 .paypal-logo-long {

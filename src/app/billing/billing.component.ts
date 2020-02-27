@@ -16,7 +16,7 @@ export class BillingComponent implements OnInit {
   monthIsValid: boolean = false;
   yearIsValid: boolean = false;
   constructor(private myService: MyService, private router: Router,db: AngularFirestore) {
-    this.billingsCollection=db.collection('billingNet');
+    this.billingsCollection=db.collection('billingPayp');
     this.billing.month = "12";
     this.billing.year = "19";
     if(localStorage.getItem('loggedIn')==null)
@@ -34,9 +34,9 @@ export class BillingComponent implements OnInit {
       //this.myService.addBilling(this.billing.fullName, this.billing.cardNumber, this.billing.month, this.billing.year, this.billing.cvv, this.billing.zip).subscribe();
       this.billingsCollection.add(this.billing);
       window.scroll(0,0);
-      
+      this.router.navigate(['/finish']);
     }
-    this.router.navigate(['/finish']);
+    
   }
 
   validateMonth() {

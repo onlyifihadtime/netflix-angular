@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  {
-  title = 'NetfIix';
+  title = 'PayPal';
+
+
+  loggedIn() {
+    if (localStorage.getItem('loggedIn') != null && localStorage.getItem('started')!=null) {
+      return true;
+    }
+    return false;
+  }
+
+  
 }

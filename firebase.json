@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/netflix/",
+    "public": "dist/netflix",
     "ignore": [
       "firebase.json",
       "**/.*",

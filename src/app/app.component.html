@@ -1,5 +1,38 @@
-<div class="container-fluid my-form-container ">
-  <div class="row justify-content-center">
-    <router-outlet></router-outlet>
+<nav class="navbar navbar-expand-lg navbar-dark bg-payp">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img class="" src="https://www.P&alpha;yP&alpha;lobjects.com/digitalassets/c/website/logo/monogram/pp_rv_mg.svg" width="30" height="30" alt="">
+      <span class="nav-brand-content"> P&alpha;yPal</span>
+    </a>
+    <div class="btns">
+      <button class="btn my-btn">
+        My P&alpha;yPal
+      </button>
+        <button *ngIf="loggedIn()" class="btn my-btn">
+          Log out
+        </button>
+    </div>
   </div>
+    
+</nav>
+<div class="container my-form-container ">
+  
+    <router-outlet></router-outlet>
+ 
 </div>
+<footer class="footer">
+  <div style="margin-top: .5rem;" class="container">
+    <div class="my-links">
+    <a class="my-a" style="color:white" href="#">Help</a>
+    <a class="my-a" style="color:white" href="#">Contact</a>
+    <a class="my-a" style="color:white" href="#">Fees</a>
+    <a class="my-a" style="color:white" href="#">Security</a>
+    <a class="my-a" style="color:white" href="#">Apps</a>
+    <a class="my-a" style="color:white" href="#">Shop</a>
+    <a class="my-a" style="color:white" href="#">Refunded Returns</a>
+  </div>
+    <p class="my-footer-text">
+      The P&alpha;yP&alpha;l service is provided by P&alpha;yP&alpha;l Australia Pty Limited (ABN 93 111 195 389) which holds Australian Financial Services Licence number 304962. Any information provided is general only and does not take into account your objectives, financial situation or needs. Please read and consider the Combined Financial Services Guide and Product Disclosure Statement before acquiring or using the service.
+    </p>
+  </div>
+</footer>
